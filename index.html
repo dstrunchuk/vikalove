@@ -3,86 +3,94 @@
 <head>
 <meta charset="UTF-8">
 <title>Скоро обниму тебя</title>
-
 <style>
-body{
-margin:0;
-background:#ffe6f0;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-font-family:Arial;
-overflow:hidden;
+body {
+  margin: 0;
+  background: #ffe6f0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
 }
 
-.scene{
-position:relative;
-text-align:center;
+.scene {
+  position: relative;
+  text-align: center;
 }
 
-.boy{
-position:absolute;
-left:-250px;
-top:-120px;
-width:180px;
-animation:moveBoy 3s forwards ease-in-out;
+.boy {
+  position: absolute;
+  left: -250px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 180px;
+  animation: moveBoy 3s forwards ease-in-out 0.5s;
 }
 
-.girl{
-position:absolute;
-right:-40px;
-top:-120px;
-width:180px;
+.girl {
+  position: absolute;
+  right: -250px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 180px;
+  animation: moveGirl 3s forwards ease-in-out 0.5s;
 }
 
-@keyframes moveBoy{
-0%{left:-250px;}
-100%{left:-80px;}
+@keyframes moveBoy {
+  0% { left: -250px; }
+  100% { left: 80px; }
 }
 
-.text{
-margin-top:140px;
-font-size:36px;
-color:#c2185b;
-opacity:0;
-animation:showText 2s forwards;
-animation-delay:2.5s;
+@keyframes moveGirl {
+  0% { right: -250px; }
+  100% { right: 80px; }
 }
 
-@keyframes showText{
-to{opacity:1;}
+.text {
+  margin-top: 140px;
+  font-size: 36px;
+  color: #c2185b;
+  opacity: 0;
+  animation: showText 2s forwards;
+  animation-delay: 3.5s;
 }
 
-.heart{
-position:absolute;
-color:red;
-font-size:24px;
-animation:float 3s infinite;
+@keyframes showText {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
 }
 
-@keyframes float{
-0%{transform:translateY(0);}
-50%{transform:translateY(-20px);}
-100%{transform:translateY(0);}
+.heart {
+  position: absolute;
+  color: red;
+  font-size: 24px;
+  animation: float 3s infinite;
+}
+
+.heart:nth-child(1) { animation-delay: 0s; font-size: 24px; left: 40px; top: -140px; }
+.heart:nth-child(2) { animation-delay: 0.5s; font-size: 28px; left: 120px; top: -180px; }
+.heart:nth-child(3) { animation-delay: 1s; font-size: 22px; left: 200px; top: -150px; }
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
 }
 </style>
 </head>
 
 <body>
-
 <div class="scene">
+  <img src="boy.PNG" class="boy">
+  <img src="girl.PNG" class="girl">
 
-<img src="boy.PNG" class="boy">
-<img src="girl.PNG" class="girl">
+  <div class="heart">❤️</div>
+  <div class="heart">❤️</div>
+  <div class="heart">❤️</div>
 
-<div class="heart" style="left:40px; top:-140px;">❤️</div>
-<div class="heart" style="left:120px; top:-180px;">❤️</div>
-<div class="heart" style="left:200px; top:-150px;">❤️</div>
-
-<div class="text">Скоро обниму тебя ❤️</div>
-
+  <div class="text">Скоро обниму тебя ❤️</div>
 </div>
-
 </body>
 </html>
