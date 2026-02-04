@@ -40,12 +40,12 @@ body {
 
 @keyframes moveBoy {
   0% { left: -250px; }
-  100% { left: 80px; }
+  100% { left: 60px; }
 }
 
 @keyframes moveGirl {
   0% { right: -250px; }
-  100% { right: 80px; }
+  100% { right: 60px; }
 }
 
 .text {
@@ -69,14 +69,16 @@ body {
   animation: float 3s infinite;
 }
 
-.heart:nth-child(1) { animation-delay: 0s; font-size: 24px; left: 40px; top: -140px; }
-.heart:nth-child(2) { animation-delay: 0.5s; font-size: 28px; left: 120px; top: -180px; }
-.heart:nth-child(3) { animation-delay: 1s; font-size: 22px; left: 200px; top: -150px; }
+.heart:nth-child(1) { left: 50px; top: -140px; animation: float 3s infinite 0s ease-in-out; }
+.heart:nth-child(2) { left: 150px; top: -180px; animation: float 4s infinite 0.5s ease-in-out; }
+.heart:nth-child(3) { left: 250px; top: -150px; animation: float 5s infinite 1s ease-in-out; }
 
 @keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0); }
+  0% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-20px) translateX(-5px); }
+  50% { transform: translateY(-40px) translateX(5px); }
+  75% { transform: translateY(-20px) translateX(-5px); }
+  100% { transform: translateY(0) translateX(0); }
 }
 </style>
 </head>
