@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Скоро обниму тебя</title>
+
+<style>
+body{
+margin:0;
+background:#ffe6f0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Arial;
+overflow:hidden;
+}
+
+.scene{
+position:relative;
+text-align:center;
+}
+
+.boy{
+position:absolute;
+left:-250px;
+top:-120px;
+width:180px;
+animation:moveBoy 3s forwards ease-in-out;
+}
+
+.girl{
+position:absolute;
+right:-40px;
+top:-120px;
+width:180px;
+}
+
+@keyframes moveBoy{
+0%{left:-250px;}
+100%{left:-80px;}
+}
+
+.text{
+margin-top:140px;
+font-size:36px;
+color:#c2185b;
+opacity:0;
+animation:showText 2s forwards;
+animation-delay:2.5s;
+}
+
+@keyframes showText{
+to{opacity:1;}
+}
+
+.heart{
+position:absolute;
+color:red;
+font-size:24px;
+animation:float 3s infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-20px);}
+100%{transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="scene">
+
+<img src="boy.png" class="boy">
+<img src="girl.png" class="girl">
+
+<div class="heart" style="left:40px; top:-140px;">❤️</div>
+<div class="heart" style="left:120px; top:-180px;">❤️</div>
+<div class="heart" style="left:200px; top:-150px;">❤️</div>
+
+<div class="text">Скоро обниму тебя ❤️</div>
+
+</div>
+
+</body>
+</html>
